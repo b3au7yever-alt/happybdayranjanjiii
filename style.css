@@ -1333,4 +1333,32 @@ body, html {
         opacity: 0;
     }
 }
+/* फ़ोन स्क्रीन पर कटने और बटन छुपने से रोकने का फिक्स */
+html, body {
+    width: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important; /* साइड स्क्रॉल बंद */
+    overflow-y: auto !important;   /* ऊपर-नीचे स्क्रॉल चालू ताकि बटन न छुपे */
+}
+
+.stage {
+    min-height: 100vh !important;
+    height: auto !important; /* फिक्स हाइट हटाई ताकि नीचे का सामान कटे नहीं */
+    padding: 20px 15px 40px 15px !important; /* नीचे 40px की जगह ताकि बटन साफ़ दिखे */
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* बटन हमेशा स्क्रीन पर साफ़ दिखने के लिए */
+.luxury-btn {
+    margin-top: 15px !important;
+    margin-bottom: 20px !important;
+    z-index: 100 !important;
+    position: relative !important;
+}
 
