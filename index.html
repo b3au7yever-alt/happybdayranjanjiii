@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Luxury Birthday Experience</title>
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- Style Sheet Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Global Background Elements (Rose Petals Canvas) -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- CONTAINER FOR THE EXPERIENCE -->
+    <main class="experience-container">
+
+        <!-- STAGE 1: LOADING SCREEN -->
+        <section id="stage-loading" class="stage active">
+            <div class="luxury-border"></div>
+            
+            <div class="loading-content">
+                <!-- Glowing Heart Spinner -->
+                <div class="heart-spinner">
+                    <svg viewBox="0 0 32 29.6">
+                        <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                        c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                    </svg>
+                    <div class="heart-glow"></div>
+                </div>
+
+                <h1 class="loading-title">Something Special Is Loading...</h1>
+                
+                <!-- Progress Percentage Indicator -->
+                <div class="loading-progress-container">
+                    <div class="progress-bar"></div>
+                    <div class="progress-text">0%</div>
+                </div>
+            </div>
+        </section>
+
+                <!-- STAGE 2: WELCOME PAGE -->
+        <section id="stage-welcome" class="stage">
+            <div class="luxury-border"></div>
+            <div class="luxury-content fade-in-up">
+                <h1 class="welcome-title">Happy Birthday</h1>
+                <h2 class="welcome-subtitle">My Love ❤️</h2>
+                
+                <div class="luxury-divider">
+                    <span class="line"></span>
+                    <span class="diamond">♦</span>
+                    <span class="line"></span>
+                </div>
+
+                <!-- EDITABLE MESSAGE AREA -->
+                <p class="emotional-message">
+       The Happiest b'day to my FAVOURITE PERSON🫂❤️my sweet boy🤌🎀
+       You are my world🌍..my heart
+       you have made me the luckiest
+       girl🥹🫶..Thank you for being always there for me and supporting me💗🎀Always keep smiling bcz your smile is priceless for me I always want to see that smile on your face it means so much to me.....🤗🥰
+             I lovee uhhh sooooo muchhh babyy🫂💋💋        .
+                </p>
+
+                <button id="btn-open-surprise" class="luxury-btn heartbeat-btn">
+                    Open Your Surprise ❤️
+                </button>
+            </div>
+        </section>
+
+        <!-- STAGE 3: SECRET GATE -->
+        <section id="stage-gate" class="stage">
+            <div class="luxury-border"></div>
+            
+            <!-- Cinematic Gate Opening Light Overlay -->
+            <div class="gate-flash-overlay"></div>
+
+            <div class="luxury-content fade-in-up">
+                <h2 class="gate-title">The Way to my heart...</h2>
+                
+                <!-- EDITABLE MESSAGE AREA -->
+                <p class="gate-message">
+                    Every beatiful surprise begins with a little secret...unlock by our code
+            
+                </p>
+
+                <!-- Premium Gate Interface -->
+                <div class="gate-container">
+                    <div class="gate-door left-door"></div>
+                    <div class="gate-door right-door"></div>
+                    <div class="gate-glowing-core"></div>
+                </div>
+
+                <div class="input-wrapper">
+                    <input type="password" id="secret-code-input" placeholder="••••••••" autocomplete="off">
+                    <div class="input-glow-border"></div>
+                </div>
+
+                <!-- EDITABLE FEEDBACK MESSAGE AREA -->
+                <p id="gate-feedback" class="gate-feedback-msg"></p>
+
+                <button id="btn-unlock-gate" class="luxury-btn">
+                    Unlock My Heart ❤️
+                </button>
+            </div>
+        </section>
+
+        <!-- STAGE 4: TEN HEARTS PAGE -->
+        <section id="stage-hearts" class="stage">
+            <div class="luxury-border"></div>
+            <div class="luxury-content full-width-content">
+                <h2 class="hearts-title">Ten Pieces of My Heart</h2>
+                <p class="hearts-subtitle">Touch any corner in my heart you will always find out yourself.</p>
+
+                <!-- Grid of 10 Hearts -->
+                <div class="hearts-grid">
+                    <!-- 10 structural placeholders that JavaScript will populate automatically -->
+                    <div class="heart-card" data-index="1"><div class="heart-icon">❤️</div></div>
+                    <div class="heart-card" data-index="2"><div class="heart-icon">❤️</div></div>
+                    <div class="heart-card" data-index="3"><div class="heart-icon">❤️</div></div>
+                    <div class="heart-card" data-index="4"><div class="heart-icon">❤️</div></div>
+                    <div class="heart-card" data-index="5"><div class="heart-icon">❤️</div></div>
+                    <div class="heart-card" data-index="6"><div class="heart-icon">❤️</div></div>
+                    <div class="heart-card" data-index="7"><div class="heart-icon">❤️</div></div>
+                    <div class="heart-card" data-index="8"><div class="heart-icon">❤️</div></div>
+                    <div class="heart-card" data-index="9"><div class="heart-icon">❤️</div></div>
+                    <div class="heart-card" data-index="10"><div class="heart-icon">❤️</div></div>
+                </div>
+
+                <!-- Hidden until all 10 are clicked -->
+                <button id="btn-continue-journey" class="luxury-btn journey-btn hidden-action">
+                    Continue❤️
+                </button>
+            </div>
+        </section>
+        
+                             <!-- STAGE 5: GALLERY PART 1 -->
+        <section id="stage-gallery1" class="stage">
+            <div class="luxury-border"></div>
+            <div class="luxury-content full-width-content">
+                <h2 class="gallery-title">The one who brightens my world ❤️</h2>
+                
+                <!-- 2 Photos Custom Layout (1 Tall + 1 Wide) -->
+                <div class="gallery-grid-custom">
+                    <div class="photo-frame img-tall-first">
+                        <img src="IMG1.jpg" alt="Memory 1" loading="lazy">
+                        <div class="frame-glow"></div>
+                    </div>
+                    <div class="photo-frame img-wide-second">
+                        <img src="IMG3.jpg" alt="Memory 2" loading="lazy">
+                        <div class="frame-glow"></div>
+                    </div>
+                </div>
+
+                <!-- EDITABLE MESSAGE SECTION -->
+                <p class="emotional-message gallery-text"> My 11:11 wish ❤️</p>
+
+              <button id="btn-to-gift" class="luxury-btn">
+                    Continue ❤️
+                </button>
+            </div>
+        </section>
+
+
+        <!-- STAGE 7: THE MAGICAL GIFT -->
+        <section id="stage-gift" class="stage">
+            <div class="luxury-border"></div>
+            <div class="luxury-content">
+                <h2 class="gift-title">A Special Gift Is Waiting For You ❤️</h2>
+                
+                <!-- EDITABLE MESSAGE AREA -->
+                <p class="emotional-message gift-desc">
+                    You have given me countless irreplaceable moments, and while no material object could ever match what you mean to me, I wrapped a little piece of my soul inside this box. Touch it to open your heart's surprise.
+                </p>
+
+                <!-- Premium Interactive 3D Gift Container -->
+                <div id="luxury-gift-box" class="gift-box-wrapper">
+                    <div class="gift-lid">
+                        <div class="ribbon-v-lid"></div>
+                        <div class="ribbon-h-lid"></div>
+                        <div class="ribbon-bow"></div>
+                    </div>
+                    <div class="gift-body">
+                        <div class="ribbon-v-body"></div>
+                        <div class="ribbon-h-body"></div>
+                    </div>
+                    <div class="gift-sparkle-core"></div>
+                </div>
+            </div>
+        </section>
+
+               <!-- STAGE 8: CAKE CUTTING CELEBRATION -->
+        <section id="stage-cake" class="stage">
+            <div class="luxury-border"></div>
+            <div class="luxury-content">
+                <h2 class="cake-title">Make A Wish ❤️</h2>
+                
+                <!-- NEW WISH INSTRUCTIONS TEXT -->
+                <p class="cake-instructions">
+                    Close your eyes, make a beautiful wish, and type it below. Once you're ready, tap 'Done' to cut your special cake! ✨
+                </p>
+
+                <!-- Premium 3D Layered Birthday Cake Architecture -->
+                <div class="cake-arena">
+                    <div class="luxury-knife" id="interactive-knife">🗡️</div>
+                    <div class="birthday-cake" id="main-cake">
+                        <div class="cake-layer layer-top">
+                            <div class="cream-drip"></div>
+                            <div class="candle-container">
+                                <div class="candle-stick"></div>
+                                <div class="candle-flame"></div>
+                            </div>
+                        </div>
+                        <div class="cake-layer layer-bottom"></div>
+                        <div class="cake-base-plate"></div>
+                    </div>
+                </div>
+
+                <!-- Unlock Wish Input Interface Wrap -->
+                <div class="input-wrapper input-cake-wrap">
+                    <input type="text" id="cake-word-input" placeholder="Type your wish here... 💫" autocomplete="off">
+                    <div class="input-glow-border"></div>
+                </div>
+
+                <!-- Done Button (Types wish -> Done Button Reveals) -->
+                <button id="btn-make-wish" class="luxury-btn hidden-action" style="margin-top: 20px;">
+                    Done ✨ Cut Cake
+                </button>
+
+                <p id="cake-feedback" class="gate-feedback-msg"></p>
+            </div>
+        </section>
+
+
+        <!-- STAGE 9: MY LETTER FOR YOU -->
+        <section id="stage-letter" class="stage">
+            <div class="luxury-border"></div>
+            <div class="luxury-content full-width-content">
+                <h2 class="letter-title">My Letter For You ❤️</h2>
+                
+                <!-- Premium Glassmorphism Scrollable Paper Box -->
+                <div class="luxury-letter-box">
+                    <div id="typewriter-letter" class="letter-text-container">
+                        <!-- JavaScript will dynamically type paragraphs here with line breaks -->
+                    </div>
+                </div>
+
+                <button id="btn-to-songs" class="luxury-btn hidden-action">
+                    Continue ❤️
+                </button>
+            </div>
+        </section>
+
+        <!-- STAGE 10: OUR SONGS MULTI-PLAYER -->
+        <section id="stage-songs" class="stage">
+            <div class="luxury-border"></div>
+            <div class="luxury-content full-width-content scrollable-stage-content">
+                <h2 class="songs-page-title">For you❤️</h2>
+                
+                <!-- 4 Premium Interactive Jukebox Music Cards -->
+                <div class="songs-list-container">
+                    <!-- Card 1 -->
+                    <div class="song-card" data-track="song1">
+                        <div class="song-album-art">🎵</div>
+                        <div class="song-details">
+                            <h4 class="track-title">Song Title One</h4>
+                            <p class="track-desc"></p>
+                            <div class="player-timeline-wrap">
+                                <span class="time-curr">0:00</span>
+                                <div class="player-progress-bg"><div class="player-progress-fill"></div></div>
+                                <span class="time-dur">0:00</span>
+                            </div>
+                        </div>
+                        <button class="song-control-btn play-trigger">▶</button>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="song-card" data-track="song2">
+                        <div class="song-album-art">🎵</div>
+                        <div class="song-details">
+                            <h4 class="track-title">Song Title Two</h4>
+                            <p class="track-desc"></p>
+                            <div class="player-timeline-wrap">
+                                <span class="time-curr">0:00</span>
+                                <div class="player-progress-bg"><div class="player-progress-fill"></div></div>
+                                <span class="time-dur">0:00</span>
+                            </div>
+                        </div>
+                        <button class="song-control-btn play-trigger">▶</button>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="song-card" data-track="song3">
+                        <div class="song-album-art">🎵</div>
+                        <div class="song-details">
+                            <h4 class="track-title">Song Title Three</h4>
+                            <p class="track-desc"></p>
+                            <div class="player-timeline-wrap">
+                                <span class="time-curr">0:00</span>
+                                <div class="player-progress-bg"><div class="player-progress-fill"></div></div>
+                                <span class="time-dur">0:00</span>
+                            </div>
+                        </div>
+                        <button class="song-control-btn play-trigger">▶</button>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="song-card" data-track="song4">
+                        <div class="song-album-art">🎵</div>
+                        <div class="song-details">
+                            <h4 class="track-title">Song Title Four</h4>
+                            <p class="track-desc"></p>
+                            <div class="player-timeline-wrap">
+                                <span class="time-curr">0:00</span>
+                                <div class="player-progress-bg"><div class="player-progress-fill"></div></div>
+                                <span class="time-dur">0:00</span>
+                            </div>
+                        </div>
+                        <button class="song-control-btn play-trigger">▶</button>
+                    </div>
+                </div>
+
+                <button id="btn-to-ending" class="luxury-btn journey-btn hidden-action">
+                    Continue ❤️
+                </button>
+            </div>
+        </section>
+
+        <!-- STAGE 11: FINAL CINEMATIC ENDING -->
+        <section id="stage-ending" class="stage">
+            <div class="luxury-border"></div>
+            <div class="final-glow-backshadow"></div>
+            
+            <div class="luxury-content">
+                <h1 class="final-heading">I Love You ❤️</h1>
+                
+                <div class="final-message-block">
+                    <p>Enjoy Your Day🎊🎉</p>
+                    <p class="highlight-birthday">Happy Birthday🎈🎀🎁</p>
+                    <p>Wishing You The Happiest Birthday Ever❤️</p>
+                </div>
+
+                <!-- Softly floating premium design emojis layer -->
+                <div class="floating-emojis-container">
+                    <span class="emoji-item e1">❤️</span>
+                    <span class="emoji-item e2">💖</span>
+                    <span class="emoji-item e3">😘</span>
+                    <span class="emoji-item e4">🥰</span>
+                    <span class="emoji-item e5">🌹</span>
+                    <span class="emoji-item e6">🎂</span>
+                    <span class="emoji-item e7">🎉</span>
+                    <span class="emoji-item e8">✨</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREMIUM POPUP MODAL FOR HEARTS -->
+        <div id="heart-modal" class="modal-overlay">
+            <div class="glass-modal">
+                <h3 id="modal-title">Heart Memory</h3>
+                <div class="modal-divider"></div>
+                <p id="modal-text">Editable birthday message content goes here.</p>
+                <button id="btn-close-modal" class="luxury-btn modal-close-btn">Close ❤️</button>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- Background Music Element -->
+<audio id="bgMusic" loop src="sitaare.mp3" preload="auto" playsinline></audio>
+
+
+    <!-- Script Link -->
+    <script src="script.js"></script>
+</body>
+</html>
