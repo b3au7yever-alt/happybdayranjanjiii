@@ -1354,11 +1354,71 @@ html, body {
     align-items: center !important;
 }
 
+
 /* बटन हमेशा स्क्रीन पर साफ़ दिखने के लिए */
 .luxury-btn {
     margin-top: 15px !important;
     margin-bottom: 20px !important;
     z-index: 100 !important;
     position: relative !important;
+}
+
+/* ==========================================
+   2X SMALLER & PERFECT MOBILE DISPLAY FIX
+   ========================================== */
+
+/* 1. पूरे पेज को स्क्रॉल योग्य और मोबाइल-फ़्रेंडली बनाएँ */
+html, body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+    min-height: 100vh !important;
+}
+
+.stage {
+    padding: 15px 12px 30px 12px !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+/* 2. टेक्स्ट और हेडिंग्स को 2x छोटा करें */
+h1, .main-title {
+    font-size: 1.8rem !important; /* आधा साइज़ */
+    margin-bottom: 8px !important;
+}
+
+h2, .gallery-title, .sub-title {
+    font-size: 1.3rem !important; /* आधा साइज़ */
+    margin-bottom: 8px !important;
+}
+
+p, .emotional-message, .gallery-text {
+    font-size: 0.95rem !important; /* साफ़ और छोटा टेक्स्ट */
+    line-height: 1.4 !important;
+    margin: 10px 0 !important;
+    max-width: 90% !important;
+}
+
+/* 3. दिल/आइकॉन और डिफ़ॉल्ट मार्जिन कम करें */
+.heart-icon, svg, img.emoji {
+    max-width: 45px !important;
+    height: auto !important;
+    margin: 8px auto !important;
+}
+
+/* 4. बटन को सही साइज़ में सामने लाएँ */
+.luxury-btn {
+    font-size: 0.9rem !important;
+    padding: 10px 22px !important;
+    margin: 15px auto 25px auto !important;
+    display: inline-block !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    flex-shrink: 0 !important;
 }
 
